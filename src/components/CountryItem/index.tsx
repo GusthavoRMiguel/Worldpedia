@@ -1,4 +1,4 @@
-import * as C from "./styles";
+import * as S from "./styles";
 import { CountryItemTS } from "../../types/CountryItem";
 
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ export const CountryItem = ({
   flag,
 }: CountryItemTS) => {
   return (
-    <C.CountryItem>
+    <S.CountryItem>
       <Link to={`/country/${name}`}>
         <div className="img--area">
           <img src={flag} alt={`Bandeira do País: ${translations.pt}`} />
@@ -30,6 +30,6 @@ export const CountryItem = ({
           </p>
         </div>
       </Link>
-    </C.CountryItem>
+    </S.CountryItem>
   );
 };

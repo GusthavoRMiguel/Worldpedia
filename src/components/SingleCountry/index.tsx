@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { CountryData } from "./styles";
 import { SingleCountryTS } from "../../types/SingleCountry";
@@ -31,6 +32,7 @@ export const SingleCountry = ({
   languages,
   borders,
   flag,
+  latlng,
 }: SingleCountryTS) => {
   const [historico, setHistorico] = usePersistedState<CountryHistoryTS[]>(
     "historico",
@@ -50,13 +52,13 @@ export const SingleCountry = ({
 
   const content = [
     {
-      País: translations.pt,
-      Capital: capital,
-      Região: region,
+      País: translations.pt || "",
+      Capital: capital || "",
+      Região: region || "",
       "Área km²": area?.toLocaleString("pt-BR") || "-",
-      População: population.toLocaleString("pt-BR") || "-",
-      Moeda: currencie[0]?.name || "-",
-      Vizinhos: borders.join(", "),
+      População: population?.toLocaleString("pt-BR") || "-",
+      Moeda: currencie?.[0]?.name || "-",
+      Vizinhos: borders?.join(", ") || "",
     },
   ];
 
@@ -80,7 +82,7 @@ export const SingleCountry = ({
       population: population,
       region: region,
       area: area,
-      currencie: currencie[0].name,
+      currencie: currencie?.[0]?.name,
       lastVisit: formatDate(new Date().toISOString()),
     };
 
@@ -155,6 +157,13 @@ export const SingleCountry = ({
                 <span>{capital}</span>
               </p>
             )}
+            <p>
+              Latitude e Longitude:
+              <span>
+                {latlng[0]}, {latlng[1]}
+              </span>
+            </p>
+
             <p>
               Área:
               <span>{area?.toLocaleString("pt-br") || "-"} km² </span>

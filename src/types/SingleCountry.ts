@@ -21,4 +21,5 @@ export interface SingleCountryTS {
   translations: {
     pt: string;
   };
+  latlng: [number, number];
 }

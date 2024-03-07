@@ -1,4 +1,4 @@
-import * as C from "./styles";
+import * as S from "./styles";
 import { Link, useParams } from "react-router-dom";
 import { SingleCountry } from "../../components/SingleCountry";
 import { useEffect, useState } from "react";
@@ -34,7 +34,7 @@ export const CountryPage = () => {
   };
 
   return (
-    <C.CountryPage>
+    <S.CountryPage>
       <div className="container">
         <Link to="/" className="back--button">
           Voltar
@@ -56,9 +56,10 @@ export const CountryPage = () => {
               currencie={item.currencies && item.currencies}
               languages={item.languages}
               borders={item.borders}
+              latlng={item.latlng}
             />
           ))}
       </div>
-    </C.CountryPage>
+    </S.CountryPage>
   );
 };
