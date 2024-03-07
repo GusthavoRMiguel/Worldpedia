@@ -1,7 +1,7 @@
 <h1>🌏 Worldpedia 🌏</h1>
 
 <h2>Sobre</h2>
-<p>Link da Aplicação: </p>
+<p>Link da Aplicação: https://worldpedia-gusthadev.vercel.app/</p>
 <p> Veja informações sobre vários países na tela inicial, filtre pelo nome e região, e <br/>
 se você se interessar em saber mais sobre algum país específico, clique nele e veja mais informações!
 </p>
