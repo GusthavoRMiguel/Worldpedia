@@ -21,6 +21,7 @@ interface DataType {
 
 export const SingleCountry = ({
   name,
+  alpha2Code,
   translations,
   demonym,
   population,
@@ -206,7 +207,12 @@ export const SingleCountry = ({
       {dataType === "graph" && (
         <GeoChart
           data={[
-            { country: name, area: area || 0, population: population || 0 },
+            {
+              country: alpha2Code,
+              pais: name,
+              area: area || 0,
+              population: population || 0,
+            },
           ]}
         />
       )}

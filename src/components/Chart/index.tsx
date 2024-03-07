@@ -5,6 +5,7 @@ import { useTheme } from "../../hooks";
 
 interface ChartData {
   country: string;
+  pais: string;
   area: number;
   population: number;
 }
@@ -16,8 +17,13 @@ interface ChartProps {
 const GeoChart: React.FC<ChartProps> = ({ data }) => {
   const { theme } = useTheme();
   const chartData = [
-    ["País", "Área", "População"],
-    ...data.map((item) => [item.country, item.area, item.population]),
+    ["Country", "País", "Área", "População"],
+    ...data.map((item) => [
+      item.country,
+      item.pais,
+      item.area,
+      item.population,
+    ]),
   ];
 
   return (
@@ -29,9 +35,9 @@ const GeoChart: React.FC<ChartProps> = ({ data }) => {
         data={chartData}
         options={{
           colorAxis: {
-            colors: ["#e7711c", `${theme.colors.secondary}`],
+            colors: [`${theme.colors.scrollbar_thumb}`],
           },
-          backgroundColor: `${theme.colors.primary}`,
+          backgroundColor: `${theme.colors.secondary}`,
           datalessRegionColor: "#dddddd",
           defaultColor: "#f5f5f5",
           legend: "none",

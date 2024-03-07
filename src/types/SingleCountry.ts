@@ -1,5 +1,6 @@
 export interface SingleCountryTS {
   name: string;
+  alpha2Code: string;
   demonym: string;
   population: number;
   region: string;

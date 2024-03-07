@@ -1,5 +1,6 @@
 export interface CountryTS {
   name: string;
+  alpha2Code: string;
   demonym: string;
   translations: {
     pt: string;

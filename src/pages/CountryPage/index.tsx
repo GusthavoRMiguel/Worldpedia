@@ -45,6 +45,7 @@ export const CountryPage = () => {
             <SingleCountry
               key={index}
               name={item.name}
+              alpha2Code={item.alpha2Code}
               flag={item.flags.png}
               translations={item.translations}
               demonym={item.demonym}
