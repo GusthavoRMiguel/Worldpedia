@@ -26,7 +26,6 @@ export const Input = ({ value, search }: InputTS) => {
         onChange={(e) => handleChange(e.target.value)}
       />
       <div>
-        {" "}
         <select value={value} onChange={(e) => handleChange(e.target.value)}>
           <option value="">Filtrar por Região</option>
           <option value="Africa">Africa</option>
@@ -35,9 +34,7 @@ export const Input = ({ value, search }: InputTS) => {
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
         </select>
-        <button type="button">
-          <Link to="/history">Historico de busca</Link>
-        </button>
+        <Link to="/history">Historico de busca</Link>
       </div>
     </InputArea>
   );

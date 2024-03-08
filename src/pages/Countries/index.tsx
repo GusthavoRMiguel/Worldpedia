@@ -32,13 +32,18 @@ export const Countries = () => {
     }
   };
 
-  const lowerSearch = search.toLowerCase();
+  const filteredCountries = countries.filter((country) => {
+    const lowerSearch = search.toLowerCase();
 
-  const filteredCountries = countries.filter(
-    (country) =>
-      country.translations.pt.toLowerCase().includes(lowerSearch) ||
-      country.region.toLowerCase().includes(lowerSearch)
-  );
+    // Verifica se o termo de pesquisa está presente em alguma das traduções
+    const hasTranslation = Object.values(country.translations).some(
+      (translation) => translation.toLowerCase().includes(lowerSearch)
+    );
+
+    const hasRegion = country.region.toLowerCase().includes(lowerSearch);
+
+    return hasTranslation || hasRegion;
+  });
 
   const pagCountries = filteredCountries.slice(offset, offset + 12);
 

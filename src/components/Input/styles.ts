@@ -1,4 +1,3 @@
-import { Input } from "./index";
 import styled from "styled-components";
 
 export const InputArea = styled.section<{ theme: string }>`
@@ -49,7 +48,7 @@ export const InputArea = styled.section<{ theme: string }>`
       }
     }
 
-    button {
+    a {
       border-radius: 8px;
       padding: 1rem 3rem;
       border: none;
@@ -57,18 +56,11 @@ export const InputArea = styled.section<{ theme: string }>`
       outline: 0;
       font-size: 14px;
       background-color: ${(props) => props.theme.colors.secondary};
-
-      a {
-        color: ${(props) => props.theme.colors.text};
-        text-decoration: none;
-        &:hover {
-          color: ${(props) => props.theme.colors.text_secondary};
-        }
-      }
-
+      color: ${(props) => props.theme.colors.text};
+      text-decoration: none;
       &:hover {
-        background-color: ${(props) => props.theme.colors.primary};
         color: ${(props) => props.theme.colors.text_secondary};
+        background-color: ${(props) => props.theme.colors.primary};
       }
     }
   }
@@ -87,7 +79,7 @@ export const InputArea = styled.section<{ theme: string }>`
     div {
       justify-content: space-between;
       select,
-      button {
+      a {
         padding: 5px 15px;
       }
     }

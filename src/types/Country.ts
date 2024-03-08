@@ -4,6 +4,16 @@ export interface CountryTS {
   demonym: string;
   translations: {
     pt: string;
+    br: string;
+    de: string;
+    es: string;
+    fa: string;
+    fr: string;
+    hr: string;
+    hu: string;
+    it: string;
+    ja: string;
+    nl: string;
   };
   population: number;
   region: string;
