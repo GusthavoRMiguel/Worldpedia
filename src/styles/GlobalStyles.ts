@@ -10,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     outline: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
   }
 
   ::-webkit-scrollbar-thumb {
@@ -42,6 +43,7 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility !important;
+    background-color: ${(props) => props.theme.colors.menu};
   }
 
   body {

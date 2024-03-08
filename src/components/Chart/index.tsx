@@ -35,7 +35,7 @@ const GeoChart: React.FC<ChartProps> = ({ data }) => {
         data={chartData}
         options={{
           colorAxis: {
-            colors: [`${theme.colors.scrollbar_thumb}`],
+            colors: [`#c8343e`],
           },
           backgroundColor: `${theme.colors.secondary}`,
           datalessRegionColor: "#dddddd",

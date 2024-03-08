@@ -29,7 +29,7 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Estado persistido para o tema usando o hook customizado usePersistedState
-  const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", light);
+  const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", dark);
 
   // Efeito para carregar o tema persistido do localStorage
   useEffect(() => {
@@ -42,12 +42,12 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
           setTheme(parsedTheme);
         } else {
           // Define o tema padrão se não houver nenhum tema persistido
-          setTheme(light);
+          setTheme(dark);
         }
       } catch (error) {
         // Em caso de erro, exibe uma mensagem de erro no console e define o tema padrão
         console.error("Erro ao recuperar o tema:", error);
-        setTheme(light);
+        setTheme(dark);
       } finally {
         setIsLoading(false);
       }
@@ -57,7 +57,7 @@ const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   }, []);
 
   const toggleTheme = () => {
-    setTheme(theme.title === "light" ? dark : light);
+    setTheme(theme.title === "dark" ? light : dark);
   };
 
   if (isLoading) {
