@@ -66,7 +66,12 @@ const HistoryPage: React.FC = () => {
 
       <h2>Histórico de Pesquisa</h2>
       {historico.length > 0 ? (
-        <Table fileName={fileName} headers={headers} content={content} />
+        <Table
+          fileName={fileName}
+          headers={headers}
+          content={content}
+          width="94vw"
+        />
       ) : (
         <div className="emptyBox">
           <img src="/empty.png" alt="Histórico Vazio" />

@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface TableProps {
+  width?: string;
+}
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,9 +11,9 @@ export const Container = styled.div`
   align-items: center;
 `;
 
-export const TableContainer = styled.div`
+export const TableContainer = styled.div<TableProps>`
   display: flex;
-  width: 94vw;
+  width: ${(props) => props.width};
   padding: 10px;
   background-color: ${(props) => props.theme.colors.secondary};
   border-radius: 10px;

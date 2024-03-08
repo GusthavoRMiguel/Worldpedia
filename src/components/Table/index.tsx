@@ -15,9 +15,10 @@ interface TableProps {
   headers: string[];
   content: { [key: string]: any }[];
   fileName: string;
+  width?: string;
 }
 
-const Table: React.FC<TableProps> = ({ headers, content, fileName }) => {
+const Table: React.FC<TableProps> = ({ headers, content, fileName, width }) => {
   const navigate = useNavigate();
 
   const handleCellClick = (link: string) => {
@@ -32,7 +33,7 @@ const Table: React.FC<TableProps> = ({ headers, content, fileName }) => {
 
   return (
     <Container>
-      <TableContainer>
+      <TableContainer width={width}>
         <TableWrapper>
           <thead>
             <tr>
