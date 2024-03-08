@@ -5,6 +5,7 @@ import { Input } from "../../components/Input";
 import { api } from "../../services/api";
 import { CountryItem } from "../../components/CountryItem";
 import Pagination from "./Pagination";
+import LoadingIcon from "../../components/loadingIcon";
 
 const LIMIT = 12;
 
@@ -25,6 +26,7 @@ export const Countries = () => {
       setCountries(countries);
     } catch (error) {
       console.error("Erro ao obter os países:", error);
+      alert("Erro ao obter os países");
     } finally {
       setLoading(false);
     }
@@ -44,7 +46,7 @@ export const Countries = () => {
     <C.CountriesArea>
       <Input value={search} search={setSearch} />
       <div className="countries">
-        {loading && <div className="loading">Carregando...</div>}
+        {loading && <LoadingIcon />}
         {!loading &&
           pagCountries.map((item) => (
             <CountryItem

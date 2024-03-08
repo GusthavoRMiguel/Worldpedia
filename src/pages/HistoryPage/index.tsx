@@ -38,6 +38,12 @@ const HistoryPage: React.FC = () => {
     link: `/country/${country.name}`,
   }));
 
+  const handleClearHistory = () => {
+    localStorage.removeItem("historico");
+    setHistorico([]);
+    alert("Histórico removido!");
+  };
+
   useEffect(() => {
     const storedHistorico = localStorage.getItem("historico");
     if (storedHistorico) {
@@ -47,12 +53,25 @@ const HistoryPage: React.FC = () => {
 
   return (
     <HistoricContainer>
-      <Link to="/" className="back--button">
-        Voltar
-      </Link>
-      <h2>Histórico de Pesquisa</h2>
+      <div className="heading">
+        <Link to="/" className="back--button">
+          Voltar
+        </Link>
+        {historico.length > 0 && (
+          <button onClick={handleClearHistory} className="clear--button">
+            Limpar Histórico
+          </button>
+        )}
+      </div>
 
-      <Table fileName={fileName} headers={headers} content={content} />
+      <h2>Histórico de Pesquisa</h2>
+      {historico.length > 0 ? (
+        <Table fileName={fileName} headers={headers} content={content} />
+      ) : (
+        <div className="emptyBox">
+          <img src="/empty.png" alt="Histórico Vazio" />
+        </div>
+      )}
     </HistoricContainer>
   );
 };

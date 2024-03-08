@@ -7,6 +7,7 @@ import {
   TableHeader,
   TableCell,
   DownloadButton,
+  Container,
 } from "./styles";
 import { useNavigate } from "react-router-dom";
 
@@ -30,32 +31,34 @@ const Table: React.FC<TableProps> = ({ headers, content, fileName }) => {
   };
 
   return (
-    <TableContainer>
-      <TableWrapper>
-        <thead>
-          <tr>
-            {headers.map((header, index) => (
-              <TableHeader key={index}>{header}</TableHeader>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {content.map((row, rowIndex) => {
-            const { link, ...rowData } = row;
-            return (
-              <tr key={rowIndex} onClick={() => handleCellClick(link)}>
-                {Object.entries(rowData).map(([key, cell], cellIndex) => (
-                  <TableCell key={cellIndex}>{cell}</TableCell>
-                ))}
-              </tr>
-            );
-          })}
-        </tbody>
-      </TableWrapper>
+    <Container>
+      <TableContainer>
+        <TableWrapper>
+          <thead>
+            <tr>
+              {headers.map((header, index) => (
+                <TableHeader key={index}>{header}</TableHeader>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {content.map((row, rowIndex) => {
+              const { link, ...rowData } = row;
+              return (
+                <tr key={rowIndex} onClick={() => handleCellClick(link)}>
+                  {Object.entries(rowData).map(([key, cell], cellIndex) => (
+                    <TableCell key={cellIndex}>{cell}</TableCell>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </TableWrapper>
+      </TableContainer>{" "}
       <DownloadButton onClick={exportToExcel}>
         Exportar para Excel
       </DownloadButton>
-    </TableContainer>
+    </Container>
   );
 };
 

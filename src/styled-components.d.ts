@@ -11,6 +11,7 @@ declare module "styled-components" {
     };
     font: {
       family: string;
+      logo: string;
     };
     colors: {
       scrollbar_thumb: string;

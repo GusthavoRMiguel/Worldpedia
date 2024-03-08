@@ -1,19 +1,13 @@
 import styled from "styled-components";
 
 export const CountryPage = styled.main`
-  min-height: calc(100vh - 90px);
-  background-color: ${(props) =>
-    props.theme.title === "light" ? "" : "rgb(32, 45, 54)"};
+  min-height: calc(100vh - 10vh);
+  background-color: ${(props) => props.theme.background.colors.secondary};
   transition: all ease 0.2s;
   .container {
     width: 90vw;
     margin: auto;
     padding: 40px 0px;
-
-    .loading {
-      min-height: 100vh;
-      color: ${(props) => (props.theme.title === "light" ? "" : "#FFF")};
-    }
   }
 
   .back--button {
@@ -47,11 +41,16 @@ export const CountryPage = styled.main`
 
   @media (max-width: 767px) {
     & {
-      padding: 20px;
+      padding: 10px;
     }
     .container {
       width: auto;
-      padding: 20px 0px;
+      padding: 0;
+    }
+    .back--button {
+      width: 90px;
+      height: 30px;
+      margin-bottom: 3rem;
     }
   }
 `;

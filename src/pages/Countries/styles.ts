@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const CountriesArea = styled.main`
-  min-height: calc(100vh - 90px);
-  background-color: ${(props) =>
-    props.theme.title === "light" ? "" : "rgb(32, 45, 54)"};
+  min-height: calc(100vh - 10vh);
+  background-color: ${(props) => props.theme.background.colors.secondary};
   transition: all ease 0.2s;
   .countries {
     display: grid;
@@ -11,10 +10,6 @@ export const CountriesArea = styled.main`
     margin: auto;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px;
-
-    .loading {
-      color: ${(props) => (props.theme.title === "light" ? "#000" : "#FFF")};
-    }
   }
 
   .pagination {

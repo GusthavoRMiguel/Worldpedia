@@ -4,6 +4,7 @@ import { SingleCountry } from "../../components/SingleCountry";
 import { useEffect, useState } from "react";
 import { CountryTS } from "../../types/Country";
 import { api } from "../../services/api";
+import LoadingIcon from "../../components/loadingIcon";
 
 export const CountryPage = () => {
   const { name, code } = useParams();
@@ -28,6 +29,7 @@ export const CountryPage = () => {
       setCountry(country);
     } catch (error) {
       console.error("Erro ao obter o país:", error);
+      alert("Erro ao obter o país:");
     } finally {
       setLoading(false);
     }
@@ -39,7 +41,7 @@ export const CountryPage = () => {
         <Link to="/" className="back--button">
           Voltar
         </Link>
-        {loading && <div className="loading">Carregando..</div>}
+        {loading && <LoadingIcon />}
         {!loading &&
           country.map((item, index) => (
             <SingleCountry

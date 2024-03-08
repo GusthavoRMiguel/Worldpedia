@@ -1,5 +1,5 @@
 import { InputTS } from "../../types/Input";
-import * as C from "./styles";
+import { InputArea } from "./styles";
 
 import { useState } from "react";
 import useDebounce from "./useDebounce";
@@ -18,24 +18,27 @@ export const Input = ({ value, search }: InputTS) => {
   };
 
   return (
-    <C.InputArea>
+    <InputArea>
       <input
         type="text"
         placeholder="Buscar por país"
         value={input}
         onChange={(e) => handleChange(e.target.value)}
       />
-      <select value={value} onChange={(e) => handleChange(e.target.value)}>
-        <option value="">Filtrar por Região</option>
-        <option value="Africa">Africa</option>
-        <option value="Americas">Americas</option>
-        <option value="Asia">Asia</option>
-        <option value="Europe">Europe</option>
-        <option value="Oceania">Oceania</option>
-      </select>{" "}
-      <button type="button">
-        <Link to="/history">Historico de busca</Link>
-      </button>
-    </C.InputArea>
+      <div>
+        {" "}
+        <select value={value} onChange={(e) => handleChange(e.target.value)}>
+          <option value="">Filtrar por Região</option>
+          <option value="Africa">Africa</option>
+          <option value="Americas">Americas</option>
+          <option value="Asia">Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Oceania">Oceania</option>
+        </select>
+        <button type="button">
+          <Link to="/history">Historico de busca</Link>
+        </button>
+      </div>
+    </InputArea>
   );
 };

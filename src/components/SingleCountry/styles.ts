@@ -26,11 +26,17 @@ export const CountryData = styled.div`
       button {
         padding: 1rem;
         border-radius: 8px;
-        background-color: transparent;
+        background-color: ${(props) => props.theme.colors.primary};
 
         &.active {
-          background-color: white;
+          background-color: ${(props) => props.theme.colors.tertiary};
+          color: ${(props) =>
+            props.theme.title === "light"
+              ? props.theme.colors.text_secondary
+              : props.theme.colors.text};
         }
+
+        color: ${(props) => props.theme.colors.text};
       }
     }
   }
@@ -118,6 +124,12 @@ export const CountryData = styled.div`
           flex-direction: row;
           height: fit-content;
           margin-bottom: 2rem;
+          justify-content: space-around;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
         }
       }
 

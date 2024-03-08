@@ -10,10 +10,8 @@ export const InputArea = styled.section<{ theme: string }>`
   transition: all ease 0.2s;
 
   input {
-    height: 50px;
-    width: 40vw;
     border-radius: 8px;
-    padding: 0px 10px;
+    padding: 1rem 15rem;
     border: none;
     box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
     outline: 0;
@@ -26,60 +24,72 @@ export const InputArea = styled.section<{ theme: string }>`
     }
   }
 
-  select {
-    border-radius: 8px;
-    padding: 0px 30px;
-    border: none;
-    box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
-    outline: 0;
-    font-size: 14px;
-    background-color: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.text};
+  div {
+    display: flex;
+    gap: 2rem;
 
-    &:hover {
-      cursor: pointer;
-      background-color: ${(props) => props.theme.colors.primary};
-      color: ${(props) => props.theme.colors.text_secondary};
-    }
-
-    > option {
+    select {
+      border-radius: 8px;
+      padding: 1rem 3rem;
+      border: none;
+      box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
+      outline: 0;
+      font-size: 14px;
       background-color: ${(props) => props.theme.colors.secondary};
-    }
-  }
+      color: ${(props) => props.theme.colors.text};
 
-  button {
-    border-radius: 8px;
-    padding: 0px 30px;
-    border: none;
-    box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
-    outline: 0;
-    font-size: 14px;
-    background-color: ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.text};
-
-    a {
       &:hover {
+        cursor: pointer;
+        background-color: ${(props) => props.theme.colors.primary};
         color: ${(props) => props.theme.colors.text_secondary};
+      }
+
+      > option {
+        background-color: ${(props) => props.theme.colors.secondary};
       }
     }
 
-    &:hover {
-      background-color: ${(props) => props.theme.colors.primary};
-      color: ${(props) => props.theme.colors.text_secondary};
+    button {
+      border-radius: 8px;
+      padding: 1rem 3rem;
+      border: none;
+      box-shadow: 2px 2px 1em rgba(0, 0, 0, 0.2);
+      outline: 0;
+      font-size: 14px;
+      background-color: ${(props) => props.theme.colors.secondary};
+
+      a {
+        color: ${(props) => props.theme.colors.text};
+        text-decoration: none;
+        &:hover {
+          color: ${(props) => props.theme.colors.text_secondary};
+        }
+      }
+
+      &:hover {
+        background-color: ${(props) => props.theme.colors.primary};
+        color: ${(props) => props.theme.colors.text_secondary};
+      }
     }
   }
 
-  @media (max-width: 440px) {
+  @media (max-width: 640px) {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+    padding: 15px 0px;
 
-    input,
-    select,
-    button {
-      width: 90vw;
-      height: 30px;
+    input {
+      padding: 8px 30px;
       text-align: center;
+    }
+
+    div {
+      justify-content: space-between;
+      select,
+      button {
+        padding: 5px 15px;
+      }
     }
   }
 `;

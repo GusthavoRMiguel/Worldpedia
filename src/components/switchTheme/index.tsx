@@ -13,7 +13,7 @@ const CustomSwitch = () => {
         checked={theme.title === "light"}
         handleDiameter={30}
         height={30}
-        width={120}
+        width={100}
         activeBoxShadow={`0px 0px 2px 3px ${theme.colors.secondary}`}
         checkedIcon={
           <UncheckedIcon>

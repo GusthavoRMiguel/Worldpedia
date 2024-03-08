@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Switch from "react-switch";
 
 export const Container = styled.div`
+  margin-top: 1rem;
   display: flex;
 `;
 
@@ -15,7 +16,7 @@ export const StyledSwitch = styled(Switch)`
       width: 80px !important;
     }
     @media (max-width: 640px) {
-      width: 110px;
+      width: 100px !important;
       div {
         width: 75px !important;
       }

@@ -7,7 +7,8 @@ export default {
     },
   },
   font: {
-    family: "Share Tech, sans-serif",
+    family: `"Share Tech", sans-serif"`,
+    logo: `"Slackside One", cursive"`,
   },
   colors: {
     scrollbar_thumb: "#343a40",

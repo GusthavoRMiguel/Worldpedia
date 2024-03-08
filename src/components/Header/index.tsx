@@ -7,6 +7,7 @@ export const Header = () => {
     <StyledHeader>
       <div className="container">
         <Link to="/">Worldpedia</Link>
+
         <CustomSwitch />
       </div>
     </StyledHeader>
