@@ -53,13 +53,13 @@ export const SingleCountry = ({
 
   const content = [
     {
-      País: translations.pt || "",
-      Capital: capital || "",
-      Região: region || "",
+      País: translations.pt || "-",
+      Capital: capital || "-",
+      Região: region || "-",
       "Área km²": area?.toLocaleString("pt-BR") || "-",
       População: population?.toLocaleString("pt-BR") || "-",
       Moeda: currencie?.[0]?.name || "-",
-      Vizinhos: borders?.join(", ") || "",
+      Vizinhos: borders?.join(", ") || "-",
     },
   ];
 
@@ -161,7 +161,7 @@ export const SingleCountry = ({
             <p>
               Latitude e Longitude:
               <span>
-                {latlng[0]}, {latlng[1]}
+                {latlng ? latlng[0] : "-"}, {latlng ? latlng[1] : "-"}
               </span>
             </p>
 

@@ -18,8 +18,9 @@ export const HistoricContainer = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 120px;
+      padding-inline: 2rem;
       height: 40px;
+      width: max-content;
       box-shadow: 1px 1px 1em rgba(0, 0, 0, 0.2);
 
       &:hover {
@@ -39,7 +40,8 @@ export const HistoricContainer = styled.div`
       justify-content: center;
       align-items: center;
       height: 40px;
-      width: 240px;
+      width: max-content;
+      padding-inline: 2rem;
       box-shadow: 1px 1px 1em rgba(0, 0, 0, 0.2);
       &:hover {
         box-shadow: 1px 1px 1em rgba(0, 0, 0, 0.5);
@@ -50,14 +52,14 @@ export const HistoricContainer = styled.div`
 
     @media (max-width: 640px) {
       .back--button {
-        width: 90px;
+        padding-inline: 1rem;
         height: 30px;
         margin-bottom: 3rem;
       }
 
       .clear--button {
         height: 30px;
-        width: 130px;
+        padding-inline: 1rem;
         margin-bottom: 3rem;
       }
     }

@@ -47,7 +47,13 @@ const HistoryPage: React.FC = () => {
   useEffect(() => {
     const storedHistorico = localStorage.getItem("historico");
     if (storedHistorico) {
-      setHistorico(JSON.parse(storedHistorico));
+      const parsedHistorico: CountryHistoryTS[] = JSON.parse(storedHistorico);
+
+      parsedHistorico.sort(
+        (a, b) =>
+          new Date(b.lastVisit).getTime() - new Date(a.lastVisit).getTime()
+      );
+      setHistorico(parsedHistorico);
     }
   }, []);
 

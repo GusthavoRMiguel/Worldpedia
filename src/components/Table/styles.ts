@@ -13,13 +13,13 @@ export const Container = styled.div`
 
 export const TableContainer = styled.div<TableProps>`
   display: flex;
-  width: ${(props) => props.width};
+  width: ${(props) => props.width || "100%"};
   padding: 10px;
   background-color: ${(props) => props.theme.colors.secondary};
   border-radius: 10px;
   margin-bottom: 20px;
   @media (max-width: 440px) {
-    overflow-x: auto;
+    overflow-x: scroll;
     padding: 1rem;
   }
 `;
